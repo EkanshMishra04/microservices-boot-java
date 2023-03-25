@@ -1,0 +1,53 @@
+1.	Customer Management Service with below mentioned APIs:9001
+
+a.	Add customer
+		post: http://localhost:9001/customer/
+		body:{
+ 			   "firstName": "Apple",
+      		   "lastName": "Jobs",
+       		   "age": 40,
+      		   "phone": 9999988888
+		     }
+
+b.	Get all Customers
+		Get: http://localhost:9001/customer/
+
+c.	Get single Customer Details
+		Get:http://localhost:9001/customer/{cid=12}
+
+d.	Update Customer Details
+		Put: http://localhost:9001/customer/
+		body: {
+    			"cid":12,
+    			"firstName": "Apple",
+      		"lastName": "Jobs",
+        		"age": 44,
+        		"phone": 9999988888,
+        		"aid":113 {must be sent}
+			}
+
+e.	Delete Customer (Deleting customer should also delete the customer account from account management service)
+		Delete: http://localhost:9001/customer/{cid=6}
+_______________________________________________________________________________________________________________________________________________________
+=======================================================================================================================================================
+
+2.	Account Management service with below mentioned APIs:
+
+
+a.	Add Money to account. (Before adding money to account must check if customer details passed in the request are valid or not)
+		Put: http://localhost:9002/account/addmoney/{aid=102}
+		body: 5000
+
+b.	Withdraw money from account. (Before adding money to account must check if customer details passed in the request are valid or not)
+		Put: http://localhost:9002/account/withdraw/102
+		body: 50
+
+c.	Get Account details. (Details include account details and related customer details).
+		Get: http://localhost:9002/account/
+		Get: http://localhost:9002/account/{aid=101}
+
+d.	Delete Account.
+		Delete: http://localhost:9002/account/{aid=113}
+
+
+
