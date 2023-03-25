@@ -1,0 +1,26 @@
+error:
+  accountNotFound: Sorry!! No Account Found for this request!
+  customerNotFound:  Sorry!! No Customer Found for this request!
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/bank
+    password: root
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: 'true'
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+eureka:
+  instance:
+    hostname: localhost
+    
+
+
+    
+    
